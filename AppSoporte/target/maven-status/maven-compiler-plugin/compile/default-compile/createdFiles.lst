@@ -1,0 +1,11 @@
+module-info.class
+mx\gob\telecomm\soporte\controller\AppController.class
+mx\gob\telecomm\soporte\interfaces\ConexionDB.class
+mx\gob\telecomm\soporte\controller\admin\VistaPerfilAdminController.class
+mx\gob\telecomm\soporte\conexiondb\ConexionPostgres.class
+mx\gob\telecomm\soporte\controller\VistaSoporteController.class
+mx\gob\telecomm\soporte\application\App.class
+mx\gob\telecomm\soporte\controller\VistaConsultaReporteSoporteController.class
+mx\gob\telecomm\soporte\model\Dispositivo.class
+mx\gob\telecomm\soporte\controller\VistaPerfilTecnicoController.class
+mx\gob\telecomm\soporte\dao\DispositivoDAO.class

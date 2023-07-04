@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.gob.telecomm.soporte.controller.VistaSoporteController">
+   <children>
+      <Pane prefHeight="600.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox prefHeight="600.0" prefWidth="1000.0">
+               <children>
+                  <Pane prefHeight="72.0" prefWidth="1000.0" styleClass="contenedor" stylesheets="@../style/app.css">
+                     <children>
+                        <Button layoutY="1.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="214.0" styleClass="btnOpciones" stylesheets="@../style/app.css" text="Nuevo Reporte Soporte " textAlignment="CENTER" wrapText="true" />
+                        <Button layoutX="215.0" layoutY="1.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="214.0" styleClass="btnOpciones" stylesheets="@../style/app.css" text="Editar Reporte Soporte " textAlignment="CENTER" wrapText="true" />
+                        <Button layoutX="441.0" layoutY="1.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="214.0" styleClass="btnOpciones" stylesheets="@../style/app.css" text="Consultar Reportes Soporte " textAlignment="CENTER" wrapText="true" />
+                        <Button layoutX="815.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnRegresar" prefHeight="47.0" prefWidth="166.0" styleClass="btnRegresar" stylesheets="@../style/app.css" text="Regresar" />
+                        <ImageView fitHeight="31.0" fitWidth="32.0" layoutX="937.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/flecha-izquierda.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="528.0" prefWidth="1000.0">
+                     <children>
+                        <TextField layoutX="23.0" layoutY="28.0" prefHeight="36.0" prefWidth="253.0" promptText="No. Reporte" styleClass="userName" stylesheets="@../style/app.css" />
+                        <Button layoutX="313.0" layoutY="29.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="155.0" styleClass="btnEnviar" stylesheets="@../style/app.css" text="Buscar" />
+                        <Label layoutX="23.0" layoutY="93.0" prefHeight="17.0" prefWidth="81.0" styleClass="tituloReportes" stylesheets="@../style/app.css" text="Atiende" />
+                        <Label layoutX="259.0" layoutY="180.0" prefHeight="17.0" prefWidth="98.0" styleClass="tituloReportes" stylesheets="@../style/app.css" text="Sucursal" />
+                        <Label layoutX="259.0" layoutY="252.0" prefHeight="17.0" prefWidth="98.0" styleClass="tituloReportes" stylesheets="@../style/app.css" text="Status" />
+                        <Label layoutX="259.0" layoutY="286.0" prefHeight="17.0" prefWidth="155.0" text="Abierto/Cerrado" />
+                        <Label layoutX="259.0" layoutY="324.0" prefHeight="17.0" prefWidth="98.0" styleClass="tituloReportes" stylesheets="@../style/app.css" text="Sucursal" />
+                        <Label layoutX="259.0" layoutY="359.0" prefHeight="17.0" prefWidth="155.0" text="Nombre Sucursal" />
+                        <Label layoutX="451.0" layoutY="93.0" prefHeight="17.0" prefWidth="148.0" styleClass="tituloReportes" stylesheets="@../style/app.css" text="Fecha de Cierre" />
+                        <DatePicker layoutX="451.0" layoutY="140.0" styleClass="calendarioApertura" stylesheets="@../style/app.css" />
+                        <Label layoutX="672.0" layoutY="93.0" prefHeight="17.0" prefWidth="166.0" styleClass="tituloReportes" stylesheets="@../style/app.css" text="Notas de Cierre" />
+                        <Label layoutX="678.0" layoutY="324.0" prefHeight="17.0" prefWidth="155.0" styleClass="tituloReportes" stylesheets="@../style/app.css" text="Nombre del Técnico" />
+                        <Button layoutX="446.0" layoutY="425.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="515.0" styleClass="bntGuardar" stylesheets="@../style/app.css" text="Guardar" />
+                        <JFXTextArea focusColor="#9f2241" labelFloat="true" layoutX="672.0" layoutY="140.0" prefHeight="168.0" prefWidth="289.0">
+                           <font>
+                              <Font name="Arial Narrow Bold" size="20.0" />
+                           </font>
+                        </JFXTextArea>
+                        <TextField layoutX="672.0" layoutY="348.0" prefHeight="39.0" prefWidth="289.0" styleClass="userName" stylesheets="@../style/app.css" />
+                        <Label layoutX="21.0" layoutY="143.0" prefHeight="17.0" prefWidth="192.0" text="Nombre del Personal de Apertura" />
+                        <Label layoutX="259.0" layoutY="93.0" prefHeight="17.0" prefWidth="81.0" styleClass="tituloReportes" stylesheets="@../style/app.css" text="Estado" />
+                        <Label layoutX="259.0" layoutY="143.0" prefHeight="17.0" prefWidth="155.0" text="Estado de la Repùblica" />
+                        <Label layoutX="23.0" layoutY="180.0" prefHeight="17.0" prefWidth="142.0" styleClass="tituloReportes" stylesheets="@../style/app.css" text="Notas de Apertura" />
+                        <Label layoutX="21.0" layoutY="224.0" prefHeight="168.0" prefWidth="192.0" text="Notas de Apertura" textAlignment="CENTER" />
+                        <Label layoutX="259.0" layoutY="213.0" prefHeight="17.0" prefWidth="155.0" text="Nombre Sucursal" />
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

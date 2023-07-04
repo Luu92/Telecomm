@@ -1,0 +1,213 @@
+* {
+	-fx-primary-color: #235B4E;
+	-fx-secondary-color: #DAC6A1;
+	-fx-third-color: #9F2241;
+	-fx-focus-color: -fx-secondary-color;
+	-fx-font-family: "Arial";
+}
+
+
+.contenedor{
+	-fx-background-color: #235B4E;
+}
+
+.tituloHeader{
+	-fx-font-size: 20pt;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-wrap-text: true;
+	-fx-font-family: -fx-font-family;
+}
+
+.tituloSecundario{
+	-fx-wrap-text: true;
+	-fx-font-size: 14pt;
+	-fx-font-family: -fx-font-family;
+	-fx-font-weight: bold;
+}
+
+.card{
+	-fx-background-radius: 20;
+	-fx-background-color: white;
+	-fx-border-color: -fx-secondary-color;
+	-fx-border: 4px;
+}
+
+.userName{
+	-fx-font-size: 14pt;
+	-fx-font-family: -fx-font-family;
+	-fx-accent: -fx-primary-color;
+	-fx-background-color: -fx-third-color, white;
+	-fx-background-insets: 0, 0 0 1 0;
+	-fx-background-radius: 0;
+	-fx-font-weight: bold;
+}
+
+.userName:focused{
+	-fx-background-color: -fx-primary-color, white;
+}
+
+.password{
+	-fx-font-size: 14pt;
+	-fx-font-family: -fx-font-family;
+	-fx-accent: -fx-primary-color;
+	-fx-background-color: -fx-third-color, white;
+	-fx-background-insets: 0, 0 0 1 0;
+	-fx-background-radius: 0;
+	-fx-font-weight: bold;
+	-fx-password-character: '*';
+}
+
+.password .text{
+	-fx-font-size: 14pt;
+	-fx-font-family: -fx-font-family;
+	-fx-accent: -fx-primary-color;
+	-fx-background-color: -fx-third-color, white;
+	-fx-background-insets: 0, 0 0 1 0;
+	-fx-background-radius: 0;
+	-fx-font-weight: bold;
+	-fx-password-character: '*';
+}
+
+.password:focused{
+	-fx-background-color: -fx-primary-color, white;
+	-fx-password-character: '*';
+}
+
+.btnEnviar{
+	-fx-background-color: -fx-third-color;
+	-fx-font-size: 15pt;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-background-radius: 15px;
+}
+
+.btnEnviar:hover{
+	-fx-background-color: -fx-primary-color;
+	-fx-font-size: 15px;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-background-radius: 15px;
+}
+
+/* CSS PANTALLA TECNICO */
+.btnOpciones{
+	-fx-background-color: -fx-primary-color;
+	-fx-font-weight: bold;
+	-fx-text-fill: white;
+	-fx-font-size: 20px;
+}
+
+.btnOpciones:hover{
+	-fx-background-color: white;
+	-fx-opacity: 0.5;
+	-fx-font-weight: bold;
+	-fx-text-fill: black;
+	-fx-font-size: 20px;
+}
+
+/*CSS PANTALLA GENERAR REPORTES SOPORTE*/
+
+.tituloReportes{
+	-fx-font-size: 15px;
+	-fx-font-weight: bold;
+	-fx-font-family: -fx-font-family;
+	-fx-text-fill: -fx-third-color;
+}
+
+
+.bntGuardar{
+	-fx-background-color: -fx-primary-color;
+	-fx-font-size: 15pt;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-background-radius: 15px;
+}
+
+.bntGuardar:hover{
+	-fx-background-color: -fx-third-color;
+	-fx-font-size: 15pt;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-background-radius: 15px;
+}
+
+.btnCamara{
+	-fx-background-color: -fx-secondary-color;
+	-fx-font-size: 15pt;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-background-radius: 15px;
+}
+
+.btnRegresar{
+	-fx-background-color: -fx-primary-color;
+	-fx-font-size: 12pt;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+}
+
+.btnRegresar:hover{
+	-fx-background-color: white;
+	-fx-opacity: 0.5;
+	-fx-font-weight: bold;
+	-fx-text-fill: black;
+	-fx-font-size: 12pt;
+}
+
+/*CALENDARIO FECHA DE APERTURA */
+.calendarioApertura .arrow-button{
+	-fx-background-color: -fx-primary-color;
+  	-fx-background-radius: 0;
+}
+
+.calendarioApertura .arrow-button:hover {
+  -fx-background-color: -fx-secondary-color;
+}
+
+.calendarioApertura .arrow-button .arrow {
+  -fx-background-color: white;
+}
+
+.calendarioApertura .cell {
+  -fx-background-color: white;
+}
+ 
+.calendarioApertura .cell:hover {
+  -fx-background-color: -fx-primary-color;
+}
+ 
+.calendarioApertura .cell:focused {
+  -fx-background-color: -fx-primary-color;
+}
+
+.calendarioApertura .selected {
+  -fx-background-color: -fx-primary-color;
+  -fx-text-fill: white;
+}
+ 
+.calendarioApertura .selected:focused {
+  -fx-background-color: -fx-primary-color;
+  -fx-text-fill: white;
+}
+ 
+.date-picker-popup {
+  -fx-border-color: transparent;
+}
+ 
+.date-picker-popup .month-year-pane {
+  -fx-background-color: -fx-primary-color;
+}
+ 
+.date-picker-popup .month-year-pane .label {
+  -fx-text-fill: white;
+}
+ 
+ .date-picker-popup .week-number-cell {
+  -fx-text-fill: -fx-secondary-color;
+}
+
+.date-picker-popup .spinner .button .left-arrow,
+.date-picker-popup .spinner .button .right-arrow {
+  -fx-background-color: -fx-third-color;
+}
