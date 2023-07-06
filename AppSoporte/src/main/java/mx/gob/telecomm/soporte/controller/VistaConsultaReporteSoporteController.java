@@ -17,7 +17,7 @@ public class VistaConsultaReporteSoporteController {
 	    @FXML
 	    void btnRegresar() {
 	    	try {
-				App.setRoot("views/VistaPerfilTecnico");
+				App.setRoot("views/admin/VistaPerfilAdmin");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

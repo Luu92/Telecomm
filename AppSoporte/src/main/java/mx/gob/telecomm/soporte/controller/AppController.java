@@ -8,6 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import mx.gob.telecomm.soporte.application.App;
+import mx.gob.telecomm.soporte.dao.UsuarioDAO;
+import mx.gob.telecomm.soporte.model.Usuario;
 
 public class AppController {
 
@@ -19,9 +21,11 @@ public class AppController {
 
 	@FXML
 	private Button btnEnviar;
-	
-	@FXML 
+
+	@FXML
 	private AnchorPane ap;
+	
+	private Usuario usuario;
 
 	/**
 	 * Método para enviar las credenciales introducidas por el usuario. El método se
@@ -30,29 +34,53 @@ public class AppController {
 	 */
 	@FXML
 	void enviarCredenciales() {
-		btnEnviar.setOnAction(e -> {
-			if (userName.getText().equals("tecnico") && password.getText().equals("123")) {
-				try {
-					App.setRoot("views/tecnico/VistaPerfilTecnico");
-				} catch (IOException e1) {
-					System.out.println(e1.getMessage().toString());
+		
+		if(userName.getText().isEmpty() || password.getText().isEmpty()) {
+			alertaError();
+		}
+		else {
+			UsuarioDAO user = new UsuarioDAO();
+			usuario = user.getUsuario(userName.getText().toUpperCase(), password.getText());
+			if(usuario == null) {
+					alertaErrorCredenciales();			
+			}
+			else
+			{
+				if(usuario.getRol().equals("ADMIN")) {
+					try {
+						App.setRoot("views/admin/VistaPerfilAdmin");
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
+				else {
+					try {
+						App.setRoot("views/tecnico/VistaPerfilTecnico");
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
 				}
 			}
-			else if(userName.getText().equals("admin") && password.getText().equals("123")){
-				try {
-					App.setRoot("views/admin/VistaPerfilAdmin");
-				} catch (IOException e1) {
-					System.out.println(e1.getMessage().toString());
-				}
-			}
-			else {
-				Alert alerta = new Alert(Alert.AlertType.WARNING);
-				alerta.setHeaderText(null);
-				alerta.setTitle("Info");
-				alerta.setContentText("Usuario o Contraseña Incorrectos");
-				alerta.showAndWait();
-			}
-		});
+		}
 	}
+	
+	public void alertaError() {
+		Alert alerta = new Alert(Alert.AlertType.ERROR);
+		alerta.setHeaderText(null);
+		alerta.setTitle("Error");
+		alerta.setContentText("Usuario o Contraseña no pueden ser vacíos");
+		alerta.showAndWait();
+		userName.clear();
+		password.clear();
+	}
+	
+	public void alertaErrorCredenciales() {
+		Alert alerta = new Alert(Alert.AlertType.WARNING);
+		alerta.setHeaderText(null);
+		alerta.setTitle("Info");
+		alerta.setContentText("Usuario o Contraseña Incorrectos");
+		alerta.showAndWait();
+	}
+	
 
 }

@@ -12,6 +12,7 @@ import mx.gob.telecomm.soporte.model.Dispositivo;
 public class DispositivoDAO {
 
 	private static String SQL_SELECT = null;
+	private static String SQL_UPDATE = null;
 	
 	
 	public Dispositivo getDispositivo(int idDispositivo) {

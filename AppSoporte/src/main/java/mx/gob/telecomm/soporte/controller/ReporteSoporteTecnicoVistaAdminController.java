@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import mx.gob.telecomm.soporte.application.App;
 
-public class VistaSoporteController {
+public class ReporteSoporteTecnicoVistaAdminController {
 	
 	@FXML
     private Button btnConsRepSop;
@@ -15,7 +15,7 @@ public class VistaSoporteController {
 	@FXML
 	void btnRegresar() {
 		try {
-			App.setRoot("views/VistaPerfilTecnico");
+			App.setRoot("views/admin/VistaPerfilAdmin");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
