@@ -4,12 +4,17 @@ import java.io.IOException;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import mx.gob.telecomm.soporte.application.App;
 
 public class ReporteSoporteTecnicoVistaAdminController {
 	
 	@FXML
     private Button btnConsRepSop;
+	
+	@FXML
+	private Label nombrePersonal;
+
 	
 
 	@FXML
@@ -25,7 +30,7 @@ public class ReporteSoporteTecnicoVistaAdminController {
 	void editarReporteSoporte() {
 
 		try {
-			App.setRoot("views/VistaEditarReporteSoporte");
+			App.setRoot("views/admin/ReporteSoporteTecnicoEditarVistaAdmin");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -34,10 +39,19 @@ public class ReporteSoporteTecnicoVistaAdminController {
 	@FXML
     void consultarReportesSoporte() {
 		try {
-			App.setRoot("views/VistaConsultaReportesSoporte");
+			App.setRoot("views/admin/ReporteSoporteTecnicoConsultarVistaAdmin");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
     }
+	
+	public Label getNombrePersonal() {
+		return nombrePersonal;
+	}
+
+	public void setNombrePersonal(Label nombrePersonal) {
+		this.nombrePersonal = nombrePersonal;
+	}
+	
 	
 }

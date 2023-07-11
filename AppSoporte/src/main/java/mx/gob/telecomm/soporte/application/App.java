@@ -22,8 +22,8 @@ public class App extends Application {
         scene = new Scene(loadFXML("views/App"));
         stage.setScene(scene);
         stage.getIcons().add(new Image(App.class.getResourceAsStream("img/ico.png")));
-        stage.setTitle("Dirección General Estrategica y de Inteligencia");
-        stage.setResizable(true);
+        stage.setTitle("DIRECCIÓN DE LA UNIDAD ESTRATÉGICA DE INTELIGENCIA");
+        stage.setResizable(false);
         stage.show();
     }
 

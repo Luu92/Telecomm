@@ -8,27 +8,27 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.gob.telecomm.soporte.controller.VistaPerfilTecnicoController">
+<AnchorPane stylesheets="@../../style/app.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.gob.telecomm.soporte.controller.VistaPerfilTecnicoController">
    <children>
       <Pane prefHeight="600.0" prefWidth="1000.0">
          <children>
             <HBox prefHeight="600.0" prefWidth="1000.0">
                <children>
-                  <Pane prefHeight="600.0" prefWidth="400.0" styleClass="contenedor" stylesheets="@../style/app.css">
+                  <Pane prefHeight="600.0" prefWidth="400.0" styleClass="contenedor">
                      <children>
-                        <Button layoutX="-2.0" layoutY="12.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="400.0" styleClass="btnOpciones" stylesheets="@../style/app.css" text="Inicio" />
-                        <Button fx:id="btnReporte" layoutX="-3.0" layoutY="82.0" mnemonicParsing="false" onAction="#generarReporte" prefHeight="70.0" prefWidth="400.0" styleClass="btnOpciones" stylesheets="@../style/app.css" text="Soporte" />
-                        <Button layoutX="-2.0" layoutY="152.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="400.0" styleClass="btnOpciones" stylesheets="@../style/app.css" text="Mantenimiento" />
+                        <Button layoutX="-2.0" layoutY="12.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="400.0" styleClass="btnOpciones" text="Inicio" />
+                        <Button fx:id="btnReporte" layoutX="-3.0" layoutY="82.0" mnemonicParsing="false" onAction="#generarReporte" prefHeight="70.0" prefWidth="400.0" styleClass="btnOpciones" text="Soporte" />
+                        <Button layoutX="-2.0" layoutY="152.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="400.0" styleClass="btnOpciones" text="Mantenimiento" />
                      </children>
                   </Pane>
                   <Pane prefHeight="600.0" prefWidth="600.0">
                      <children>
                         <ImageView fitHeight="409.0" fitWidth="422.0" layoutX="129.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../img/logo.jpg" />
+                              <Image url="@../../img/logo.jpg" />
                            </image>
                         </ImageView>
-                        <Label layoutX="346.0" layoutY="44.0" prefHeight="22.0" prefWidth="113.0" styleClass="tituloSecundario" stylesheets="@../style/app.css" text="Bienvenido: " />
+                        <Label layoutX="346.0" layoutY="44.0" prefHeight="22.0" prefWidth="113.0" styleClass="tituloSecundario" stylesheets="@../../style/app.css" text="Bienvenido: " />
                      </children>
                   </Pane>
                </children>

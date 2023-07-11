@@ -22,7 +22,7 @@
                         <Button layoutY="397.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="400.0" styleClass="btnOpciones" text="Inventario" />
                      </children>
                   </Pane>
-                  <Pane prefHeight="600.0" prefWidth="600.0">
+                  <Pane prefHeight="600.0" prefWidth="600.0" styleClass="contenedor-menu" stylesheets="@../../style/app.css">
                      <children>
                         <ImageView fitHeight="409.0" fitWidth="422.0" layoutX="106.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -30,6 +30,7 @@
                            </image>
                         </ImageView>
                         <Label layoutX="297.0" layoutY="70.0" prefHeight="22.0" prefWidth="109.0" styleClass="tituloSecundario" text="Bienvenido: " />
+                        <Label fx:id="nombrePersonal" layoutX="418.0" layoutY="70.0" prefHeight="22.0" prefWidth="143.0" styleClass="tituloReportes" stylesheets="@../../style/app.css" text="admin" />
                      </children>
                   </Pane>
                </children>

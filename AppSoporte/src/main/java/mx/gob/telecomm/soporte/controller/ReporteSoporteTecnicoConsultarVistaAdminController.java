@@ -6,13 +6,16 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import mx.gob.telecomm.soporte.application.App;
 
-public class VistaConsultaReporteSoporteController {
+public class ReporteSoporteTecnicoConsultarVistaAdminController {
 	
-	   @FXML
+	  @FXML
 	    private Button btnEditarReporteSoporte;
 
 	    @FXML
-	    private Button btn_nue_rep_sop;
+	    private Button btnGenerarReporte;
+
+	    @FXML
+	    private Button btnRegresar;
 
 	    @FXML
 	    void btnRegresar() {
@@ -26,16 +29,16 @@ public class VistaConsultaReporteSoporteController {
 	    @FXML
 	    void editarReporteSoporte() {
 	    	try {
-				App.setRoot("views/VistaEditarReporteSoporte");
+				App.setRoot("views/admin/ReporteSoporteTecnicoEditarVistaAdmin");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 	    }
 
 	    @FXML
-	    void vistaReporte() {
+	    void generarReporteSoporte() {
 	    	try {
-				App.setRoot("views/VistaReporteSoporte");
+				App.setRoot("views/admin/ReporteSoporteTecnicoVistaAdmin");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

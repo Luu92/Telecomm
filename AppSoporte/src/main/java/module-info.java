@@ -3,6 +3,7 @@ module mx.gob.telecomm.soporte.application {
     requires javafx.fxml;
 	requires javafx.graphics;
 	requires java.sql;
+	requires java.desktop;
 
     opens mx.gob.telecomm.soporte.application to javafx.fxml;
     exports mx.gob.telecomm.soporte.application;

@@ -2,11 +2,16 @@ package mx.gob.telecomm.soporte.controller;
 
 import java.io.IOException;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import mx.gob.telecomm.soporte.application.App;
 import mx.gob.telecomm.soporte.dao.UsuarioDAO;
 import mx.gob.telecomm.soporte.model.Usuario;
@@ -21,9 +26,6 @@ public class AppController {
 
 	@FXML
 	private Button btnEnviar;
-
-	@FXML
-	private AnchorPane ap;
 	
 	private Usuario usuario;
 
@@ -33,8 +35,7 @@ public class AppController {
 	 * y la contraseña son válidos y realiza una acción en consecuencia.
 	 */
 	@FXML
-	void enviarCredenciales() {
-		
+	void enviarCredenciales(ActionEvent event) {
 		if(userName.getText().isEmpty() || password.getText().isEmpty()) {
 			alertaError();
 		}
@@ -50,13 +51,14 @@ public class AppController {
 					try {
 						App.setRoot("views/admin/VistaPerfilAdmin");
 					} catch (IOException e) {
-						e.printStackTrace();
+						System.err.println(String.format("Error al cargar ventana: %s",e.getMessage()));
 					}
 				}
 				else {
 					try {
 						App.setRoot("views/tecnico/VistaPerfilTecnico");
-					} catch (IOException e) {
+					} 
+					catch (IOException e) {
 						e.printStackTrace();
 					}
 				}
