@@ -113,10 +113,17 @@
 /*CSS PANTALLA GENERAR REPORTES SOPORTE*/
 
 .tituloReportes{
-	-fx-font-size: 15px;
+	-fx-font-size: 12px;
 	-fx-font-weight: bold;
 	-fx-font-family: -fx-font-family;
 	-fx-text-fill: -fx-third-color;
+}
+
+.noTituloReportes{
+	-fx-font-size: 25px;
+	-fx-font-weight: bold;
+	-fx-font-family: -fx-font-family;
+	-fx-text-fill: -fx-primary-color;
 }
 
 

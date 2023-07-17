@@ -10,6 +10,7 @@ public class VistaPerfilAdminController {
 
 	@FXML
 	private Button btnReporte;
+	
 
 	@FXML
 	void generarReporte() {
