@@ -18,12 +18,8 @@ class SucursalDAOTest {
 		ObservableList<Sucursal> listaSucursales = FXCollections.observableArrayList();
 		SucursalDAO sucursal = new SucursalDAO();
 		listaSucursales = sucursal.getSucursal("1001");
-		for (Sucursal sucursalLista : listaSucursales) {
-			System.out.println(sucursalLista.getNombreSucursal());
-		}
-		//System.out.println("Espero que si llegue algo"+sucursal.getSucursal("1002"));
+		assertEquals(7,listaSucursales.size());
 		assertNotNull(listaSucursales);
-		//System.out.println(listaSucursales.toString());
 	}
 
 }

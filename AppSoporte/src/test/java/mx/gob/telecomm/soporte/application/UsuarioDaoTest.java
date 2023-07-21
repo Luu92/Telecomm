@@ -12,13 +12,9 @@ class UsuarioDaoTest {
 	@Test
 	void testGetUsuario() {
 		UsuarioDAO user = new UsuarioDAO();
-		Usuario usuario = user.getUsuario("FER69","123");
-		try {			
-			System.out.println(usuario.getRol());
-		}catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
+		Usuario usuario = user.getUsuario("FER2","123");
 		assertNotNull(usuario);
+		assertEquals("FER2", usuario.getUserName());
 	}
 
 }
