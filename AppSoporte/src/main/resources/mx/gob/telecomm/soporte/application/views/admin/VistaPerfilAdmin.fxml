@@ -16,9 +16,9 @@
                <children>
                   <Pane prefHeight="600.0" prefWidth="400.0" styleClass="contenedor">
                      <children>
-                        <Button layoutY="12.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="400.0" styleClass="btnOpciones" text="Inicio" />
-                        <Button fx:id="btnReporte" layoutY="82.0" mnemonicParsing="false" onAction="#generarReporte" prefHeight="70.0" prefWidth="400.0" styleClass="btnOpciones" text="Soporte" />
-                        <Button layoutY="152.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="400.0" styleClass="btnOpciones" text="Mantenimiento" />
+                        <Button layoutY="12.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="400.0" styleClass="btnOpciones" text="Cerrar Sesión" />
+                        <Button fx:id="btnReporte" layoutY="82.0" mnemonicParsing="false" onAction="#generarReporte" prefHeight="70.0" prefWidth="400.0" styleClass="btnOpciones" text="Reportes" />
+                        <Button layoutY="152.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="400.0" styleClass="btnOpciones" text="Usuarios" />
                         <Button layoutY="397.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="400.0" styleClass="btnOpciones" text="Inventario" />
                      </children>
                   </Pane>

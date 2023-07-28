@@ -20,9 +20,9 @@
                <children>
                   <Pane prefHeight="72.0" prefWidth="1000.0" styleClass="contenedor">
                      <children>
-                        <Button fx:id="btnGenerarReporte" layoutY="1.0" mnemonicParsing="false" onAction="#generarReporteSoporte" prefHeight="69.0" prefWidth="214.0" styleClass="btnOpciones" text="Nuevo Reporte Soporte " textAlignment="CENTER" wrapText="true" />
-                        <Button layoutX="215.0" layoutY="1.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="214.0" styleClass="btnOpciones" text="Editar Reporte Soporte " textAlignment="CENTER" wrapText="true" />
-                        <Button fx:id="btnConsultarReportes" layoutX="429.0" layoutY="2.0" mnemonicParsing="false" onAction="#consultarReportes" prefHeight="69.0" prefWidth="214.0" styleClass="btnOpciones" text="Consultar Reportes Soporte " textAlignment="CENTER" wrapText="true" />
+                        <Button fx:id="btnGenerarReporte" layoutY="1.0" mnemonicParsing="false" onAction="#generarReporteSoporte" prefHeight="69.0" prefWidth="214.0" styleClass="btnOpciones" text="Nuevo Reporte" textAlignment="CENTER" wrapText="true" />
+                        <Button layoutX="215.0" layoutY="1.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="214.0" styleClass="btnOpciones" text="Editar Reporte" textAlignment="CENTER" wrapText="true" />
+                        <Button fx:id="btnConsultarReportes" layoutX="429.0" layoutY="2.0" mnemonicParsing="false" onAction="#consultarReportes" prefHeight="69.0" prefWidth="214.0" styleClass="btnOpciones" text="Consultar Reportes" textAlignment="CENTER" wrapText="true" />
                         <Button fx:id="btnRegresar" layoutX="815.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnRegresar" prefHeight="47.0" prefWidth="166.0" styleClass="btnRegresar" text="Regresar" />
                         <ImageView fitHeight="31.0" fitWidth="32.0" layoutX="937.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -33,31 +33,31 @@
                   </Pane>
                   <Pane prefHeight="528.0" prefWidth="1000.0">
                      <children>
-                        <TextField layoutX="23.0" layoutY="28.0" prefHeight="36.0" prefWidth="253.0" promptText="No. Reporte" styleClass="userName" />
-                        <Button layoutX="313.0" layoutY="29.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="155.0" styleClass="btnEnviar" text="Buscar" />
+                        <TextField fx:id="noReporte" layoutX="23.0" layoutY="28.0" prefHeight="36.0" prefWidth="253.0" promptText="No. Reporte" styleClass="userName" />
+                        <Button layoutX="313.0" layoutY="29.0" mnemonicParsing="false" onAction="#buscarReporte" prefHeight="37.0" prefWidth="155.0" styleClass="btnEnviar" text="Buscar" />
                         <Label layoutX="23.0" layoutY="93.0" prefHeight="17.0" prefWidth="81.0" styleClass="tituloReportes" text="Atiende" />
                         <Label layoutX="259.0" layoutY="180.0" prefHeight="17.0" prefWidth="98.0" styleClass="tituloReportes" text="Sucursal" />
                         <Label layoutX="259.0" layoutY="252.0" prefHeight="17.0" prefWidth="98.0" styleClass="tituloReportes" text="Status" />
-                        <Label layoutX="259.0" layoutY="286.0" prefHeight="17.0" prefWidth="155.0" text="Abierto/Cerrado" />
-                        <Label layoutX="259.0" layoutY="324.0" prefHeight="17.0" prefWidth="98.0" styleClass="tituloReportes" text="Sucursal" />
-                        <Label layoutX="259.0" layoutY="359.0" prefHeight="17.0" prefWidth="155.0" text="Nombre Sucursal" />
+                        <Label fx:id="status" layoutX="259.0" layoutY="286.0" prefHeight="17.0" prefWidth="155.0" text="Abierto/Cerrado" />
+                        <Label layoutX="259.0" layoutY="324.0" prefHeight="17.0" prefWidth="98.0" styleClass="tituloReportes" text="Tipo" />
+                        <Label fx:id="tipoReporte" layoutX="259.0" layoutY="359.0" prefHeight="17.0" prefWidth="155.0" text="Tipo Reporte" />
                         <Label layoutX="451.0" layoutY="93.0" prefHeight="17.0" prefWidth="148.0" styleClass="tituloReportes" text="Fecha de Cierre" />
-                        <DatePicker layoutX="451.0" layoutY="140.0" styleClass="calendarioApertura" />
+                        <DatePicker fx:id="fechaCierre" layoutX="451.0" layoutY="140.0" styleClass="calendarioApertura" />
                         <Label layoutX="672.0" layoutY="93.0" prefHeight="17.0" prefWidth="166.0" styleClass="tituloReportes" text="Notas de Cierre" />
                         <Label layoutX="678.0" layoutY="324.0" prefHeight="17.0" prefWidth="155.0" styleClass="tituloReportes" text="Nombre del Técnico" />
-                        <Button layoutX="446.0" layoutY="425.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="515.0" styleClass="bntGuardar" text="Guardar" />
-                        <JFXTextArea focusColor="#9f2241" labelFloat="true" layoutX="672.0" layoutY="140.0" prefHeight="168.0" prefWidth="289.0">
+                        <Button fx:id="btnGuardarReporte" layoutX="446.0" layoutY="425.0" mnemonicParsing="false" onAction="#guardarReporte" prefHeight="57.0" prefWidth="515.0" styleClass="bntGuardar" text="Guardar" />
+                        <JFXTextArea fx:id="notasCierre" focusColor="#9f2241" labelFloat="true" layoutX="672.0" layoutY="140.0" prefHeight="168.0" prefWidth="289.0">
                            <font>
                               <Font name="Arial Narrow Bold" size="20.0" />
                            </font>
                         </JFXTextArea>
-                        <TextField layoutX="672.0" layoutY="348.0" prefHeight="39.0" prefWidth="289.0" styleClass="userName" />
-                        <Label layoutX="21.0" layoutY="143.0" prefHeight="17.0" prefWidth="192.0" text="Nombre del Personal de Apertura" />
+                        <TextField fx:id="nombreTecnico" layoutX="672.0" layoutY="348.0" prefHeight="39.0" prefWidth="289.0" styleClass="userName" />
+                        <Label fx:id="atiende" layoutX="21.0" layoutY="143.0" prefHeight="17.0" prefWidth="192.0" text="Nombre del Personal de Apertura" wrapText="true" />
                         <Label layoutX="259.0" layoutY="93.0" prefHeight="17.0" prefWidth="81.0" styleClass="tituloReportes" text="Estado" />
-                        <Label layoutX="259.0" layoutY="143.0" prefHeight="17.0" prefWidth="155.0" text="Estado de la Repùblica" />
+                        <Label fx:id="estadoRepublica" layoutX="259.0" layoutY="143.0" prefHeight="17.0" prefWidth="155.0" text="Estado de la Repùblica" />
                         <Label layoutX="23.0" layoutY="180.0" prefHeight="17.0" prefWidth="142.0" styleClass="tituloReportes" text="Notas de Apertura" />
-                        <Label layoutX="21.0" layoutY="224.0" prefHeight="168.0" prefWidth="192.0" text="Notas de Apertura" textAlignment="CENTER" />
-                        <Label layoutX="259.0" layoutY="213.0" prefHeight="17.0" prefWidth="155.0" text="Nombre Sucursal" />
+                        <Label fx:id="notasReporte" layoutX="21.0" layoutY="224.0" prefHeight="168.0" prefWidth="192.0" text="Notas de Apertura" wrapText="true" />
+                        <Label fx:id="sucursal" layoutX="259.0" layoutY="213.0" prefHeight="17.0" prefWidth="155.0" text="Nombre Sucursal" />
                      </children>
                   </Pane>
                </children>

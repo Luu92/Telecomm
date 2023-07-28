@@ -9,6 +9,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import mx.gob.telecomm.soporte.conexiondb.ConexionPostgres;
 import mx.gob.telecomm.soporte.interfaces.ConexionDB;
+import mx.gob.telecomm.soporte.model.ReporteSoporte;
 import mx.gob.telecomm.soporte.model.Sucursal;
 
 public class SucursalDAO {
@@ -35,13 +36,11 @@ public class SucursalDAO {
 				String entidad = rs.getString("entidad");
 				String registroDB = rs.getString("registro");
 				String nombreSucursal = rs.getString("nombre_sucursal");
-				String estadoSucursal = rs.getString("estado_sucursal");
-				String tipoComunicacion = rs.getString("tipo_comunicacion");
+				String tipoComunicaion = rs.getString("tipo_Comunicacion");
 				sucursal = new Sucursal(registroDB, entidad, nombreSucursal);
 				sucursal.setId(id);
 				sucursal.setRegion(region);
-				sucursal.setEstadoSucursal(estadoSucursal);
-				sucursal.setTipoComunicacion(tipoComunicacion);
+				sucursal.setTipoComunicacion(tipoComunicaion);
 				listaSucursales.add(sucursal);
 			}
 		} catch (Exception e) {
@@ -55,8 +54,47 @@ public class SucursalDAO {
 				e.printStackTrace();
 			}
 		}
-
 		return listaSucursales;
 	}
 
+	public Sucursal getSucursalUnica(ReporteSoporte reporte) {
+		
+		Connection conn = null;
+		ConexionDB conPostgres = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		Sucursal sucursal = null;
+		try {
+			conPostgres = new ConexionPostgres();
+			conn = conPostgres.getConnection();
+			SQL_SELECT = "SELECT * FROM SUCURSAL WHERE REGISTRO = " +"'"+ reporte.getRegistro() +"'";
+			stmt = conn.prepareStatement(SQL_SELECT);
+			rs = stmt.executeQuery();
+			while (rs.next()) {
+				int id = rs.getInt("id");
+				String region = rs.getString("region");
+				String entidad = rs.getString("entidad");
+				String registroDB = rs.getString("registro");
+				String nombreSucursal = rs.getString("nombre_sucursal");
+				String tipoComunicacion = rs.getString("tipo_comunicacion");
+				sucursal = new Sucursal(registroDB, entidad, nombreSucursal);
+				sucursal.setId(id);
+				sucursal.setRegion(region);
+				sucursal.setTipoComunicacion(tipoComunicacion);
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			try {
+				conPostgres.close(rs);
+				conPostgres.close(stmt);
+				conPostgres.close(conn);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return sucursal;
+	}
+	
+	
 }

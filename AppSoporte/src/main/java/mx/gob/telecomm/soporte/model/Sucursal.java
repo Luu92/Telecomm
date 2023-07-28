@@ -7,7 +7,6 @@ public class Sucursal {
 	private String entidad;
 	private String registro;
 	private String nombreSucursal;
-	private String estadoSucursal;
 	private String tipoComunicacion;
 	
 	public Sucursal() {}
@@ -56,14 +55,6 @@ public class Sucursal {
 
 	public void setNombreSucursal(String nombreSucursal) {
 		this.nombreSucursal = nombreSucursal;
-	}
-
-	public String getEstadoSucursal() {
-		return estadoSucursal;
-	}
-
-	public void setEstadoSucursal(String estadoSucursal) {
-		this.estadoSucursal = estadoSucursal;
 	}
 
 	public String getTipoComunicacion() {

@@ -9,6 +9,7 @@ mx\gob\telecomm\soporte\controller\AppController.class
 mx\gob\telecomm\soporte\interfaces\ConexionDB.class
 mx\gob\telecomm\soporte\dao\ReporteDAO.class
 mx\gob\telecomm\soporte\conexiondb\ConexionPostgres.class
+mx\gob\telecomm\soporte\controller\VistaValidarCamarasController.class
 mx\gob\telecomm\soporte\controller\ReporteSoporteTecnicoConsultarVistaAdminController.class
 mx\gob\telecomm\soporte\model\ReporteSoporte.class
 mx\gob\telecomm\soporte\application\App.class

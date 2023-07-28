@@ -7,6 +7,7 @@ module mx.gob.telecomm.soporte.application {
 	requires com.jfoenix;
 	
     opens mx.gob.telecomm.soporte.application to javafx.fxml;
+    opens mx.gob.telecomm.soporte.model to javafx.base;
     exports mx.gob.telecomm.soporte.application;
     exports mx.gob.telecomm.soporte.controller to javafx.fxml;
     opens mx.gob.telecomm.soporte.controller to javafx.fxml;

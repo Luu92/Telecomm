@@ -7,6 +7,8 @@ import org.junit.Ignore;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import mx.gob.telecomm.soporte.dao.ReporteDAO;
 import mx.gob.telecomm.soporte.model.ReporteSoporte;
 
@@ -22,7 +24,7 @@ class ReporteDAOTest {
 		nuevoReporte = new ReporteDAO();
 		reporte = new ReporteSoporte();
 		reporte.setId(130);
-		reporte.setReporte("S-230718 / 121615");
+		reporte.setReporte("S-230718/121615");
 		reporte.setTipo("Checklist");
 		reporte.setElemento("Cámara");
 		reporte.setRegistro("1001");
@@ -52,7 +54,7 @@ class ReporteDAOTest {
 	
 	@Test
 	@DisplayName("Pueba TestEditarReporte")
-	public void editarReporete() {
+	void editarReporte() {
 		nuevoReporte = new ReporteDAO();
 		reporte = new ReporteSoporte();
 		reporte = nuevoReporte.getReporteSoporte("50495");
@@ -66,4 +68,15 @@ class ReporteDAOTest {
 
 	}
 
+	@Test
+	@DisplayName("Prueba Lista de Reportes")
+	void getListaReportesTest() {
+		nuevoReporte = new ReporteDAO();
+		reporte = new ReporteSoporte();
+		ObservableList<ReporteSoporte> listaReportes = FXCollections.observableArrayList();
+		listaReportes = nuevoReporte.getListaReportes("1008");
+		assertEquals(3,listaReportes.size());
+	}
+	
+	
 }

@@ -1,6 +1,7 @@
 package mx.gob.telecomm.soporte.controller;
 
 import java.io.IOException;
+import java.lang.System.Logger;
 import java.sql.Timestamp;
 import java.time.LocalDate;
 
@@ -19,6 +20,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import mx.gob.telecomm.soporte.application.App;
 import mx.gob.telecomm.soporte.dao.ReporteDAO;
@@ -28,9 +30,9 @@ import mx.gob.telecomm.soporte.model.Sucursal;
 
 public class ReporteSoporteTecnicoVistaAdminController {
 
-    @FXML
-    private JFXTextArea aperturaNotas;
-	
+	@FXML
+	private JFXTextArea aperturaNotas;
+
 	@FXML
 	private Button btnBuscar;
 
@@ -60,18 +62,18 @@ public class ReporteSoporteTecnicoVistaAdminController {
 
 	@FXML
 	private Label noReporteSoporte;
-	
+
 	@FXML
-    private TextField nombreTecnico;
+	private TextField nombreTecnico;
 
 	@FXML
 	private Label sucursal;
 
 	@FXML
 	private JFXComboBox<String> tipoReporte;
-	
+
 	@FXML
-    private JFXButton validarCamaras;
+	private JFXButton validarCamaras;
 
 	private String cadena;
 
@@ -113,11 +115,11 @@ public class ReporteSoporteTecnicoVistaAdminController {
 
 	public void agregarDetallesComBox() {
 		ObservableList<String> tipo = FXCollections.observableArrayList();
-		tipo.addAll("SOPORTE", "INSTALACIÓN", "GERENCIA", "REUBICACIÓN", "CHECKLIST", "DAÑO", "RETIRO");
+		tipo.addAll("CHECKLIST", "DAÑO", "INSTALACIÓN", "MANTENIMIENTO",   "REUBICACIÓN",  "RETIRO", "SOPORTE");
 		tipoReporte.setItems(tipo);
 
 		ObservableList<String> elementoTipo = FXCollections.observableArrayList();
-		elementoTipo.addAll("CÁMARA", "DVR", "ALARMA", "POE", "NAS", "BATERIA", "QNAP", "TARJETA RED");
+		elementoTipo.addAll("ALARMA", "BATERIA", "CÁMARA", "DVR", "NAS", "POE", "QNAP", "TARJETA RED");
 		elemento.setItems(elementoTipo);
 
 		ObservableList<String> statusReporte = FXCollections.observableArrayList();
@@ -132,17 +134,43 @@ public class ReporteSoporteTecnicoVistaAdminController {
 
 	}
 
+
 	@FXML
 	void buscarRegistro() {
 		SucursalDAO sucursales = new SucursalDAO();
 		ObservableList<Sucursal> listaSucursales = FXCollections.observableArrayList();
 		ObservableList<String> listaCom = FXCollections.observableArrayList();
 		listaSucursales = sucursales.getSucursal(noRegistro.getText());
-		Timestamp fecha = new Timestamp(System.currentTimeMillis());
-		cadena = fecha.toString();
-		noReporteSoporte.setText("S-" + cadena.substring(2, 4) + cadena.substring(5, 7) + cadena.substring(8, 10)
-				+ "/" + cadena.substring(11, 13) + cadena.substring(14, 16) + cadena.substring(17, 19));
-
+		
+		if(tipoReporte.getValue().equals("CHECKLIST")) {
+			cadena = "CK-" + getNoReporte(getAleatorio().toString());
+			noReporteSoporte.setText(cadena);
+		}
+		else if(tipoReporte.getValue().equals("DAÑO")) {
+			cadena = "DO-" + getNoReporte(getAleatorio().toString());
+			noReporteSoporte.setText(cadena);
+		}
+		else if(tipoReporte.getValue().equals("INSTALACIÓN")) {
+			cadena = "IT-" + getNoReporte(getAleatorio().toString());
+			noReporteSoporte.setText(cadena);
+		}
+		else if(tipoReporte.getValue().equals("MANTENIMIENTO")) {
+			cadena = "MT-" + getNoReporte(getAleatorio().toString());
+			noReporteSoporte.setText(cadena);
+		}
+		else if(tipoReporte.getValue().equals("REUBICACIÓN")) {
+			cadena = "RB-" + getNoReporte(getAleatorio().toString());
+			noReporteSoporte.setText(cadena);
+		}
+		else if(tipoReporte.getValue().equals("RETIRO")) {
+			cadena = "RG-" + getNoReporte(getAleatorio().toString());
+			noReporteSoporte.setText(cadena);
+		}
+		else {
+			cadena = "ST-" + getNoReporte(getAleatorio().toString());
+			noReporteSoporte.setText(cadena);
+		}
+		
 		if (listaSucursales.size() == 0) {
 			alertaError();
 		} else {
@@ -161,11 +189,9 @@ public class ReporteSoporteTecnicoVistaAdminController {
 		try {
 			if (status.getValue() == null || noRegistro.getText().equals("")) {
 				errorCamposVacios();
-			}
-			else if (status.getValue().equals("CERRADO")) {
+			} else if (status.getValue().equals("CERRADO")) {
 				ReporteSoporte nuevoReporte = new ReporteSoporte();
 				ReporteDAO reporte = new ReporteDAO();
-				/*//System.out.println("FECHA "+fechaApertura.getValue().toString().length();
 				nuevoReporte.setReporte(noReporteSoporte.getText());
 				nuevoReporte.setTipo(tipoReporte.getValue());
 				nuevoReporte.setElemento(elemento.getValue());
@@ -176,17 +202,33 @@ public class ReporteSoporteTecnicoVistaAdminController {
 				nuevoReporte.setFechaApertura(fechaApertura.getValue().toString());
 				nuevoReporte.setFechaRevision(fechaApertura.getValue().toString());
 				nuevoReporte.setNotaApertura(aperturaNotas.getText());
-				nuevoReporte.setNotaCierre(fechaApertura.getValue().toString());
+				nuevoReporte.setFechaCierre(fechaApertura.getValue().toString());
 				nuevoReporte.setAtiendeCierre("MARINA BISTEK");
 				nuevoReporte.setNotaCierre(aperturaNotas.getText());
-				reporte.generarReporte(nuevoReporte);*/
+				reporte.generarReporte(nuevoReporte);
 				cambiosGuardados();
 			} else if (status.getValue().equals("ABIERTO")) {
-				
+				ReporteSoporte nuevoReporte = new ReporteSoporte();
+				ReporteDAO reporte = new ReporteDAO();
+
+				nuevoReporte.setReporte(noReporteSoporte.getText());
+				nuevoReporte.setTipo(tipoReporte.getValue());
+				nuevoReporte.setElemento(elemento.getValue());
+				nuevoReporte.setRegistro(noRegistro.getText());
+				nuevoReporte.setNombreTecnico(nombreTecnico.getText());
+				nuevoReporte.setAtiende("MARINA BISTEK");// agregar persona que atiende
+				nuevoReporte.setStatus(status.getValue());
+				nuevoReporte.setFechaApertura(fechaApertura.getValue().toString());
+				nuevoReporte.setFechaRevision(fechaApertura.getValue().toString());
+				nuevoReporte.setNotaApertura(aperturaNotas.getText().toUpperCase());
+				nuevoReporte.setFechaCierre(null);
+				nuevoReporte.setAtiendeCierre(null);
+				nuevoReporte.setNotaCierre(null);
+				reporte.generarReporte(nuevoReporte);
+				cambiosGuardados();
 			}
-			
-		}
-		catch (Exception e) {
+
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -197,6 +239,35 @@ public class ReporteSoporteTecnicoVistaAdminController {
 
 	public void setCadena(String cadena) {
 		this.cadena = cadena;
+	}
+
+	public Integer getAleatorio() {
+		int numero = (int) (Math.random() * 9999 + 1);
+		return numero;
+	}
+
+	public String getNoReporte(String largoRandom) {
+		String noReporte = "";
+		switch (largoRandom.length()) {
+		case 1:
+			noReporte = "000"+largoRandom.toString();
+		break;
+
+		case 2:
+			noReporte = "00"+largoRandom.toString();
+		break;
+		
+		case 3:
+			noReporte = "0"+largoRandom.toString();
+		break;
+		case 4:
+			noReporte = largoRandom.toString();
+		break;
+		default:
+			noReporte = "error al generar folio";
+		break;
+		}
+		return noReporte;
 	}
 
 	public void alertaError() {
@@ -216,7 +287,7 @@ public class ReporteSoporteTecnicoVistaAdminController {
 		alerta.showAndWait();
 		noRegistro.clear();
 	}
-	
+
 	public void cambiosGuardados() {
 		Alert alerta = new Alert(Alert.AlertType.INFORMATION);
 		alerta.setHeaderText(null);
@@ -227,22 +298,21 @@ public class ReporteSoporteTecnicoVistaAdminController {
 		tipoReporte.setValue(null);
 		elemento.setValue(null);
 		noRegistro.clear();
+		estadoRepublica.setText("Estado de la Republica");
+		listarSucursales.getItems().removeAll(listarSucursales.getItems());
+		aperturaNotas.clear();
+		nombreTecnico.clear();
 	}
 
 	@FXML
-    void validarCamaras() {
+	void validarCamaras() {
 		try {
-			Stage stage = new Stage();
-			Parent root = FXMLLoader.load(getClass().getResource("/views/assets/VistaValidarCamaras"));
-			Scene scene = new Scene(root);
-			stage.setScene(scene);
-			stage.show();
+			App.setRoot("views/assets/VistaValidarCamaras");
 		} catch (IOException e) {
-			
 			e.printStackTrace();
 		}
-    }
-	
+	}
+
 	@FXML
 	public void initialize() {
 		agregarDetallesComBox();
