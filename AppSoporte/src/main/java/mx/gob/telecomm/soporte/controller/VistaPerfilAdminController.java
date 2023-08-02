@@ -11,18 +11,21 @@ public class VistaPerfilAdminController {
 	@FXML
 	private Button btnReporte;
 	
-
+	@FXML
+    void cerrarSesion() {
+		try {
+			App.setRoot("views/App");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+	
 	@FXML
 	void generarReporte() {
 		try {
 			App.setRoot("views/admin/ReporteSoporteTecnicoVistaAdmin");
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
-		
+		}	
 	}
-	
-	
-	
-
 }

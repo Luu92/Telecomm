@@ -9,20 +9,24 @@ import mx.gob.telecomm.soporte.application.App;
 public class VistaPerfilTecnicoController {
 
 	@FXML
-    private Button btnReporte;
+	private Button btnReporte;
 
-    @FXML
-    void generarReporte() {
-    		try {
-				App.setRoot("views/VistaReporteSoporte");
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-    }
-    
-    
-    
+	@FXML
+	void generarReporte() {
+		try {
+			App.setRoot("views/admin/ReporteSoporteTecnicoVistaAdmin");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 
-		
-	
+	@FXML
+	void cerrarSesion() {
+		try {
+			App.setRoot("views/App");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
 }

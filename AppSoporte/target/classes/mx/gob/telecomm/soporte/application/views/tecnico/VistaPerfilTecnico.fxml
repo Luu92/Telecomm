@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane stylesheets="@../../style/app.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.gob.telecomm.soporte.controller.VistaPerfilTecnicoController">
+<AnchorPane styleClass="contenedor-menu" stylesheets="@../../style/app.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.gob.telecomm.soporte.controller.VistaPerfilTecnicoController">
    <children>
       <Pane prefHeight="600.0" prefWidth="1000.0">
          <children>
@@ -16,9 +16,8 @@
                <children>
                   <Pane prefHeight="600.0" prefWidth="400.0" styleClass="contenedor">
                      <children>
-                        <Button layoutX="-2.0" layoutY="12.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="400.0" styleClass="btnOpciones" text="Inicio" />
-                        <Button fx:id="btnReporte" layoutX="-3.0" layoutY="82.0" mnemonicParsing="false" onAction="#generarReporte" prefHeight="70.0" prefWidth="400.0" styleClass="btnOpciones" text="Soporte" />
-                        <Button layoutX="-2.0" layoutY="152.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="400.0" styleClass="btnOpciones" text="Mantenimiento" />
+                        <Button layoutX="-2.0" layoutY="12.0" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="70.0" prefWidth="400.0" styleClass="btnOpciones" text="Inicio" />
+                        <Button fx:id="btnReporte" layoutX="-3.0" layoutY="82.0" mnemonicParsing="false" onAction="#generarReporte" prefHeight="70.0" prefWidth="400.0" styleClass="btnOpciones" text="Reportes" />
                      </children>
                   </Pane>
                   <Pane prefHeight="600.0" prefWidth="600.0">
