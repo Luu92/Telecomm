@@ -1,11 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 
-
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1" fx:controller="mx.gob.telecomm.soporte.controller.VistaValidarCamarasController">
+<AnchorPane stylesheets="@../../style/app.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.gob.telecomm.soporte.controller.VistaValidarCamarasController">
    <children>
-      <Pane prefHeight="600.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Pane prefHeight="600.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox prefHeight="600.0" prefWidth="1000.0">
+               <children>
+                  <Pane prefHeight="72.0" prefWidth="1000.0" styleClass="contenedor">
+                     <children>
+                        <Button layoutX="802.0" layoutY="12.0" mnemonicParsing="false" onAction="#regresarPrincipal" prefHeight="46.0" prefWidth="170.0" styleClass="btnRegresar" text="Regresar" />
+                        <ImageView fitHeight="32.0" fitWidth="37.0" layoutX="928.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../img/flecha-izquierda.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="529.0" prefWidth="1000.0">
+                     <children>
+                        <TextField layoutX="40.0" layoutY="36.0" promptText="No. Registro" styleClass="userName" />
+                        <Button layoutX="322.0" layoutY="38.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="185.0" styleClass="btnEnviar" text="Button" />
+                        <TableView layoutX="37.0" layoutY="104.0" prefHeight="400.0" prefWidth="600.0">
+                          <columns>
+                            <TableColumn prefWidth="200.0" text="Modelo" />
+                            <TableColumn prefWidth="200.0" text="Serie" />
+                              <TableColumn prefWidth="200.0" text="No. Inventario" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+         </children></Pane>
    </children>
 </AnchorPane>

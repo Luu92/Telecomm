@@ -57,6 +57,19 @@
 					</execution>
 				</executions>
 			</plugin>
+			<!-- ESTO FUE LO QUE AGREGE-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>mx.gob.telecomm.soporte.application.App</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+			<!-- FIN DE LO QUE AGREGE-->
 		</plugins>
 		<resources>
 			<resource>
