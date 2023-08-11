@@ -48,6 +48,9 @@ public class ReporteSoporteTecnicoEditarVistaAdminController {
 
 	@FXML
 	private JFXTextArea notasCierre;
+	
+	@FXML
+    private Label noRegistro;
 
 	@FXML
 	private Label notasReporte;
@@ -113,7 +116,7 @@ public class ReporteSoporteTecnicoEditarVistaAdminController {
 		ReporteDAO reportedb = new ReporteDAO();
 		reporte.setFechaCierre(fechaCierre.getValue().toString());
 		reporte.setNotaCierre(notasCierre.getText().toUpperCase());
-		reporte.setAtiendeCierre(nombreTecnico.getText().toUpperCase());
+		reporte.setAtiendeCierre(atiende.getText());
 		reportedb.editarReporte(noReporte.getText().toUpperCase(), reporte);
 		cambiosGuardados();
 	}
@@ -124,6 +127,7 @@ public class ReporteSoporteTecnicoEditarVistaAdminController {
 		sucursal = sucursaldb.getSucursalUnica(reporte);
 		atiende.setText(reporte.getAtiende());
 		notasReporte.setText(reporte.getNotaApertura());
+		noRegistro.setText(reporte.getRegistro());
 		estadoRepublica.setText(sucursal.getEntidad());
 		this.sucursal.setText(sucursal.getNombreSucursal());
 		status.setText(reporte.getStatus());
@@ -153,6 +157,7 @@ public class ReporteSoporteTecnicoEditarVistaAdminController {
 		sucursal.setText("Nombre Sucursal");
 		status.setText("Abierto/Cerrado");
 		tipoReporte.setText("Tipo Reporte");
+		noReporte.setText("No Reporte");
 		notasCierre.clear();
 		nombreTecnico.clear();
 		noReporte.clear();

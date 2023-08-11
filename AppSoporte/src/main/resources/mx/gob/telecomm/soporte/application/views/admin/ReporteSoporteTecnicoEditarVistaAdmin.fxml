@@ -36,28 +36,28 @@
                         <TextField fx:id="noReporte" layoutX="23.0" layoutY="28.0" prefHeight="36.0" prefWidth="253.0" promptText="No. Reporte" styleClass="userName" />
                         <Button layoutX="313.0" layoutY="29.0" mnemonicParsing="false" onAction="#buscarReporte" prefHeight="37.0" prefWidth="155.0" styleClass="btnEnviar" text="Buscar" />
                         <Label layoutX="23.0" layoutY="93.0" prefHeight="17.0" prefWidth="81.0" styleClass="tituloReportes" text="Atiende" />
-                        <Label layoutX="259.0" layoutY="180.0" prefHeight="17.0" prefWidth="98.0" styleClass="tituloReportes" text="Sucursal" />
-                        <Label layoutX="259.0" layoutY="252.0" prefHeight="17.0" prefWidth="98.0" styleClass="tituloReportes" text="Status" />
-                        <Label fx:id="status" layoutX="259.0" layoutY="286.0" prefHeight="17.0" prefWidth="155.0" text="Abierto/Cerrado" />
-                        <Label layoutX="259.0" layoutY="324.0" prefHeight="17.0" prefWidth="98.0" styleClass="tituloReportes" text="Tipo" />
-                        <Label fx:id="tipoReporte" layoutX="259.0" layoutY="359.0" prefHeight="17.0" prefWidth="155.0" text="Tipo Reporte" />
+                        <Label layoutX="259.0" layoutY="246.0" prefHeight="17.0" prefWidth="98.0" styleClass="tituloReportes" text="Sucursal" />
+                        <Label layoutX="259.0" layoutY="312.0" prefHeight="17.0" prefWidth="98.0" styleClass="tituloReportes" text="Status" />
+                        <Label fx:id="status" layoutX="259.0" layoutY="342.0" prefHeight="17.0" prefWidth="155.0" text="Abierto/Cerrado" />
+                        <Label layoutX="259.0" layoutY="372.0" prefHeight="17.0" prefWidth="98.0" styleClass="tituloReportes" text="Tipo" />
+                        <Label fx:id="tipoReporte" layoutX="259.0" layoutY="402.0" prefHeight="17.0" prefWidth="155.0" text="Tipo Reporte" />
                         <Label layoutX="451.0" layoutY="93.0" prefHeight="17.0" prefWidth="148.0" styleClass="tituloReportes" text="Fecha de Cierre" />
                         <DatePicker fx:id="fechaCierre" layoutX="451.0" layoutY="140.0" styleClass="calendarioApertura" />
                         <Label layoutX="672.0" layoutY="93.0" prefHeight="17.0" prefWidth="166.0" styleClass="tituloReportes" text="Notas de Cierre" />
-                        <Label layoutX="678.0" layoutY="324.0" prefHeight="17.0" prefWidth="155.0" styleClass="tituloReportes" text="Nombre del Técnico" />
+                        <Label layoutX="260.0" layoutY="97.0" prefHeight="17.0" prefWidth="155.0" styleClass="tituloReportes" text="Registro" />
                         <Button fx:id="btnGuardarReporte" layoutX="446.0" layoutY="425.0" mnemonicParsing="false" onAction="#guardarReporte" prefHeight="57.0" prefWidth="515.0" styleClass="bntGuardar" text="Guardar" />
                         <JFXTextArea fx:id="notasCierre" focusColor="#9f2241" labelFloat="true" layoutX="672.0" layoutY="140.0" prefHeight="168.0" prefWidth="289.0">
                            <font>
                               <Font name="Arial Narrow Bold" size="20.0" />
                            </font>
                         </JFXTextArea>
-                        <TextField fx:id="nombreTecnico" layoutX="672.0" layoutY="348.0" prefHeight="39.0" prefWidth="289.0" styleClass="userName" />
-                        <Label fx:id="atiende" layoutX="21.0" layoutY="143.0" prefHeight="17.0" prefWidth="192.0" text="Nombre del Personal de Apertura" wrapText="true" />
-                        <Label layoutX="259.0" layoutY="93.0" prefHeight="17.0" prefWidth="81.0" styleClass="tituloReportes" text="Estado" />
-                        <Label fx:id="estadoRepublica" layoutX="259.0" layoutY="143.0" prefHeight="17.0" prefWidth="155.0" text="Estado de la Repùblica" />
+                        <Label fx:id="atiende" layoutX="21.0" layoutY="135.0" prefHeight="17.0" prefWidth="192.0" text="Nombre del Personal de Apertura" wrapText="true" />
+                        <Label layoutX="259.0" layoutY="177.0" prefHeight="17.0" prefWidth="81.0" styleClass="tituloReportes" text="Estado" />
+                        <Label fx:id="estadoRepublica" layoutX="259.0" layoutY="212.0" prefHeight="17.0" prefWidth="155.0" text="Estado de la Repùblica" />
                         <Label layoutX="23.0" layoutY="180.0" prefHeight="17.0" prefWidth="142.0" styleClass="tituloReportes" text="Notas de Apertura" />
                         <Label fx:id="notasReporte" layoutX="21.0" layoutY="224.0" prefHeight="168.0" prefWidth="192.0" text="Notas de Apertura" wrapText="true" />
-                        <Label fx:id="sucursal" layoutX="259.0" layoutY="213.0" prefHeight="17.0" prefWidth="155.0" text="Nombre Sucursal" />
+                        <Label fx:id="sucursal" layoutX="259.0" layoutY="279.0" prefHeight="17.0" prefWidth="155.0" text="Nombre Sucursal" />
+                        <Label fx:id="noRegistro" layoutX="259.0" layoutY="136.0" text="No Registro" />
                      </children>
                   </Pane>
                </children>

@@ -36,10 +36,11 @@
                         <Button layoutX="307.0" layoutY="36.0" mnemonicParsing="false" onAction="#buscarReportes" prefHeight="37.0" prefWidth="155.0" styleClass="btnEnviar" text="Buscar" />
                         <TableView fx:id="tablaReportes" layoutX="31.0" layoutY="110.0" prefHeight="389.0" prefWidth="768.0" styleClass="tabla-detalles">
                           <columns>
-                            <TableColumn fx:id="noReporteColumna" editable="false" prefWidth="147.99999237060547" resizable="false" text="No. Reporte" />
-                            <TableColumn fx:id="fechaReporteColumna" prefWidth="138.66664123535156" resizable="false" text="Fecha" />
-                              <TableColumn fx:id="statusReporteColumna" prefWidth="257.3333435058594" resizable="false" text="Status" />
-                              <TableColumn fx:id="atiendeReporteColumna" prefWidth="221.66665649414062" resizable="false" text="Atiende" />
+                            <TableColumn fx:id="noReporteColumna" editable="false" prefWidth="109.33334350585938" resizable="false" text="No. Reporte" />
+                            <TableColumn fx:id="fechaReporteColumna" prefWidth="122.66671752929688" resizable="false" text="Fecha" />
+                              <TableColumn fx:id="statusReporteColumna" prefWidth="174.66665649414062" resizable="false" text="Status" />
+                              <TableColumn fx:id="atiendeReporteColumna" prefWidth="143.33334350585938" resizable="false" text="Atiende" />
+                              <TableColumn fx:id="atiendeReporteColumna1" prefWidth="214.6666259765625" resizable="false" text="Motivo" />
                           </columns>
                         </TableView>
                         <Button layoutX="820.0" layoutY="188.0" mnemonicParsing="false" onAction="#limpiarDetalles" prefHeight="47.0" prefWidth="166.0" styleClass="btnCamara" text="Limpiar" />

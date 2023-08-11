@@ -36,21 +36,21 @@
                   <Pane prefHeight="528.0" prefWidth="1000.0">
                      <children>
                         <TextField fx:id="noRegistro" layoutX="23.0" layoutY="28.0" prefHeight="36.0" prefWidth="253.0" promptText="No. Registro *" styleClass="userName" />
-                        <Button fx:id="btnBuscar" layoutX="301.0" layoutY="30.0" mnemonicParsing="false" onAction="#buscarRegistro" prefHeight="37.0" prefWidth="155.0" styleClass="btnEnviar" text="Buscar" />
-                        <Label layoutX="254.0" layoutY="94.0" prefHeight="17.0" prefWidth="51.0" styleClass="tituloReportes" text="Tipo " />
-                        <Label layoutX="251.0" layoutY="178.0" prefHeight="17.0" prefWidth="98.0" styleClass="tituloReportes" text="Elemento" />
-                        <Label layoutX="254.0" layoutY="255.0" prefHeight="17.0" prefWidth="98.0" styleClass="tituloReportes" text="Estado" />
-                        <Label fx:id="estadoRepublica" layoutX="254.0" layoutY="290.0" prefHeight="17.0" prefWidth="155.0" text="Estado de la República" />
-                        <Label layoutX="254.0" layoutY="328.0" prefHeight="17.0" prefWidth="98.0" styleClass="tituloReportes" text="Sucursal" />
+                        <Button fx:id="btnBuscar" layoutX="489.0" layoutY="30.0" mnemonicParsing="false" onAction="#buscarRegistro" prefHeight="37.0" prefWidth="155.0" styleClass="btnEnviar" text="Buscar" />
+                        <Label layoutX="303.0" layoutY="22.0" prefHeight="17.0" prefWidth="51.0" styleClass="tituloReportes" text="Tipo " />
+                        <Label layoutX="251.0" layoutY="93.0" prefHeight="17.0" prefWidth="98.0" styleClass="tituloReportes" text="Elemento" />
+                        <Label layoutX="254.0" layoutY="190.0" prefHeight="17.0" prefWidth="98.0" styleClass="tituloReportes" text="Estado" />
+                        <Label fx:id="estadoRepublica" layoutX="254.0" layoutY="226.0" prefHeight="17.0" prefWidth="155.0" text="Estado de la República" />
+                        <Label layoutX="254.0" layoutY="263.0" prefHeight="17.0" prefWidth="98.0" styleClass="tituloReportes" text="Sucursal" />
                         <Label layoutX="451.0" layoutY="93.0" prefHeight="17.0" prefWidth="148.0" styleClass="tituloReportes" text="Fecha de Apertura" />
                         <DatePicker fx:id="fechaApertura" layoutX="451.0" layoutY="140.0" styleClass="calendarioApertura" />
-                        <Label layoutX="451.0" layoutY="252.0" prefHeight="17.0" prefWidth="115.0" styleClass="tituloReportes" text="Status Reporte *" />
+                        <Label layoutX="451.0" layoutY="264.0" prefHeight="17.0" prefWidth="115.0" styleClass="tituloReportes" text="Status Reporte *" />
                         <Label layoutX="672.0" layoutY="93.0" prefHeight="17.0" prefWidth="166.0" styleClass="tituloReportes" text="Notas de Apertura *" />
                         <Label layoutX="678.0" layoutY="324.0" prefHeight="17.0" prefWidth="155.0" styleClass="tituloReportes" text="Nombre del Técnico *" />
-                        <Button layoutX="672.0" layoutY="425.0" mnemonicParsing="false" onAction="#guardarReporte" prefHeight="57.0" prefWidth="289.0" styleClass="bntGuardar" text="Guardar" />
-                        <JFXComboBox fx:id="elemento" focusColor="#9f2241" layoutX="251.0" layoutY="209.0" prefHeight="25.0" prefWidth="166.0" promptText="Seleccione Opción" />
-                        <JFXComboBox fx:id="tipoReporte" focusColor="#9f2241" layoutX="249.0" layoutY="128.0" prefHeight="25.0" prefWidth="166.0" promptText="Seleccione Opción" />
-                        <JFXComboBox fx:id="status" focusColor="#9f2241" layoutX="451.0" layoutY="282.0" prefHeight="25.0" prefWidth="192.0" promptText="Seleccione Opción" />
+                        <Button fx:id="btnGuardarReporte" layoutX="672.0" layoutY="425.0" mnemonicParsing="false" onAction="#guardarReporte" prefHeight="57.0" prefWidth="289.0" styleClass="bntGuardar" text="Guardar" />
+                        <JFXComboBox fx:id="elemento" focusColor="#9f2241" layoutX="251.0" layoutY="133.0" prefHeight="25.0" prefWidth="166.0" promptText="Seleccione Opción" />
+                        <JFXComboBox fx:id="tipoReporte" focusColor="#9f2241" layoutX="300.0" layoutY="41.0" prefHeight="25.0" prefWidth="166.0" promptText="Seleccione Opción" />
+                        <JFXComboBox fx:id="status" focusColor="#9f2241" layoutX="451.0" layoutY="291.0" prefHeight="25.0" prefWidth="192.0" promptText="Seleccione Opción" />
                         <JFXTextArea fx:id="aperturaNotas" focusColor="#9f2241" labelFloat="true" layoutX="672.0" layoutY="140.0" prefHeight="168.0" prefWidth="289.0">
                            <font>
                               <Font name="Arial Narrow Bold" size="20.0" />
@@ -69,7 +69,7 @@
                         </ImageView>
                         <Label layoutX="759.0" layoutY="29.0" prefHeight="37.0" prefWidth="148.0" text="ADMIN CORRECTO" />
                         <Label fx:id="noReporteSoporte" layoutX="23.0" layoutY="417.0" prefHeight="36.0" prefWidth="201.0" styleClass="noTituloReportes" />
-                        <JFXComboBox fx:id="listarSucursales" layoutX="254.0" layoutY="363.0" prefHeight="23.0" prefWidth="166.0" promptText="Seleccione Opción" />
+                        <JFXComboBox fx:id="listarSucursales" layoutX="254.0" layoutY="294.0" prefHeight="23.0" prefWidth="166.0" promptText="Seleccione Opción" />
                         <Label layoutX="25.0" layoutY="387.0" prefHeight="17.0" prefWidth="125.0" styleClass="tituloReportes" text="No. Reporte" />
                      </children>
                   </Pane>
